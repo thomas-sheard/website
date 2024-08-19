@@ -1,0 +1,124 @@
+:root {
+  --dark:#282C34;
+  --light:#ABB2BF;
+  --red:#E06C75;
+  --yellow:#E5C07B;
+  --green:#98C379;
+  --teal:#56B6C2;
+  --blue:#61AFEF;
+  --magenta:#C678DD;
+}
+
+@font-face {
+  font-family: "CascadiaCode",
+}
+
+body {
+  font-family: Cascadia Cove, monospace;
+  text-align: center;
+  background-color: var(--dark);
+}
+
+h1 {
+  color: var(--light);
+}
+
+h2 {
+
+}
+
+p {
+  color: var(--light);
+  font-weight: bold;
+  ol {
+  }
+
+  li {
+    color: var(--light);
+    font-weight: bold;
+  }
+}
+
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  a {
+    margin: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    /*color: var(--light);*/
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+embed {
+  margin: auto;
+  width: 100%;
+}
+
+.container {
+  width: 40%;
+  margin: auto;
+  padding: 20px;
+
+  text-align: left;
+  line-height: 2;
+}
+
+.code {
+  font-family: CascadiaCode, monospace;
+  width: 100%;
+
+  border-radius: 5px;
+  background-color: var(--light);
+  padding: 5px;
+  font-weight: bold;
+
+  p {
+    color: var(--dark);
+  }
+
+  /* learning a little bit about javascript and then importing highlight.js (https://highlightjs.org/) would be great for this! */
+
+}
+
+.essay {
+
+  width: 40%;
+  margin: auto;
+  border-radius: 5px;
+
+  font-family: Garamond, serif;
+  background-color: #E1E1DD;
+
+  h1 {
+    color: #2A2727;
+    text-align: center;
+    line-height: 2;
+  }
+
+  h2 {
+    color: #2A2727;
+    text-align: left;
+    padding: 20px;
+    line-height: 2;
+  }
+
+  p {
+    color: #2A2727;
+    font-weight: normal;
+    text-align: justify;
+    padding: 20px;
+    line-height: 2;
+  }
+
+}
