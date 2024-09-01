@@ -10,115 +10,112 @@
 }
 
 @font-face {
-  font-family: "CascadiaCode",
+  font-family: serif;
 }
 
-body {
-  font-family: Cascadia Cove, monospace;
-  text-align: center;
+header {
+  font-family: monospace;
+  font-weight: bold;
   background-color: var(--dark);
-}
+  text-align: center;
 
-h1 {
-  color: var(--light);
-}
-
-h2 {
+  h1 {
+    font-size: 36pt;
+    color: var(--light);
+    margin: 0px;
+  }
 
 }
 
 p {
-  color: var(--light);
-  font-weight: bold;
-  ol {
-  }
-
-  li {
-    color: var(--light);
-    font-weight: bold;
-  }
-}
-
-
-a {
-  color: var(--teal);
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-nav {
-  a {
-    margin: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    /*color: var(--light);*/
-  }
-  a:hover {
-    text-decoration: none;
-  }
-}
-
-embed {
-  margin: auto;
-  width: 100%;
-}
-
-.container {
-  width: 40%;
-  margin: auto;
-  padding: 20px;
-
-  text-align: left;
+  font-size: 12pt;
+  font-weight: 550;
   line-height: 2;
 }
 
-.code {
-  font-family: CascadiaCode, monospace;
-  width: 100%;
+nav {
 
-  border-radius: 5px;
-  background-color: var(--light);
-  padding: 5px;
-  font-weight: bold;
+  align: center;
+  cursor: default;
 
-  p {
+  margin: 12px;
+  padding-bottom: 12px;
+
+  a {
+    margin: 20px;
+    font-size: 21pt;
+    font-weight: bold;
     color: var(--dark);
+    text-decoration: none;
   }
 
-  /* learning a little bit about javascript and then importing highlight.js (https://highlightjs.org/) would be great for this! */
+  a:hover {
+    text-decoration: none;
+  }
 
 }
 
-.essay {
 
-  width: 40%;
+body {
+  background-color: var(--dark);
+}
+
+.contents {
+  a {
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  background-color: var(--light);
+  color: var(--dark);
+  font-family: monospace;
+
+  border-radius: 7px;
+  width: 50%;
   margin: auto;
-  border-radius: 5px;
-
-  font-family: Garamond, serif;
-  background-color: #E1E1DD;
-
+  padding: 12px;
+  
   h1 {
-    color: #2A2727;
     text-align: center;
-    line-height: 2;
+    font-size: 21pt;
+    margin: 0px;
+    padding: 7pt;
   }
 
   h2 {
-    color: #2A2727;
-    text-align: left;
-    padding: 20px;
-    line-height: 2;
+    font-size: 17pt;
+    margin: 0px;
+    padding: 7pt;
   }
 
   p {
-    color: #2A2727;
-    font-weight: normal;
-    text-align: justify;
-    padding: 20px;
-    line-height: 2;
+    padding-left: 7pt;
+    padding-right: 7pt;
+    font-family: serif;
+    font-size: 12pt;
+    margin: 0px;
+    /*text-align: justify;*/
+  }
+
+  .code {
+    color: var(--light);
+    background-color: var(--dark);
+    margin: 7px;
+    border-radius: 5px;
+
+    p {
+      line-height: 1.2;
+      font-family: monospace;
+      font-weight: bold;
+      padding-left: 2px;
+    }
+
+    padding: 7px;
+
   }
 
 }

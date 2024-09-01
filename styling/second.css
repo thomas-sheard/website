@@ -1,0 +1,130 @@
+:root {
+  --darkest:#000000;
+  --dark:#818181;
+  --light:#c3c3c3;
+  --lightest:#FDFFFF;
+
+  --teal:#008080;
+  --blue:#010081;
+  --magenta:#ff0081;
+}
+
+@font-face {
+  font-family: serif,
+}
+
+header {
+  background-color: var(--blue);
+}
+
+body {
+  font-family: Garamond, serif;
+  text-align: justify;
+  background-color: var(--dark);
+}
+
+h1 {
+  color: var(--lightest);
+  background-color: var(--blue);
+  font-family: Cascadia, monospace;
+  text-align: center;
+  font-size: 42pt;
+  margin: 10px;
+}
+
+h2 {
+  font-family: Cascadia Cove, monospace;
+  color: var(--dark);
+  text-align: left;
+}
+
+p {
+  font-family: Garamond, serif;
+  font-size: 12pt;
+  color: var(--dark);
+  text-align: justify;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  a {
+    margin: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--dark);
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+embed {
+  margin: auto;
+  width: 100%;
+}
+
+.container {
+  width: 40%;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--light);
+  text-align: left;
+  line-height: 2;
+}
+
+.code {
+  font-family: CascadiaCode, monospace;
+  width: 100%;
+
+  border-radius: 5px;
+  background-color: var(--dark);
+  padding: 5px;
+  font-weight: bold;
+
+  p {
+    font-family: monospace;
+    color: var(--light);
+  }
+
+  /* learning a little bit about javascript and then importing highlight.js (https://highlightjs.org/) would be great for this! */
+
+}
+
+.essay {
+
+  width: 40%;
+  margin: auto;
+  border-radius: 5px;
+
+  font-family: Garamond, serif;
+  background-color: #E1E1DD;
+
+  h1 {
+    color: #2A2727;
+    text-align: center;
+    line-height: 2;
+  }
+
+  h2 {
+    color: #2A2727;
+    text-align: left;
+    padding: 20px;
+    line-height: 2;
+  }
+
+  p {
+    color: #2A2727;
+    font-weight: normal;
+    text-align: justify;
+    padding: 20px;
+    line-height: 2;
+  }
+
+}
