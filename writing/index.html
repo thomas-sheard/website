@@ -7,18 +7,15 @@
     <link rel="stylesheet" href="/styling/main.css">
 </head>
 
-<header>
-  <h1>
-    thomas sheard.
-  </h1>
-  <nav id="navbar">
-    <a href="/index.html",               style="color: var(--blue);">home</a>
-    <a href="/hobbies/index.html",      style="color: var(--magenta);">hobbies</a>
-    <a href="/writing/index.html",      style="color: var(--green);">writing</a>
-    <a href="/handbook/index.html",     style="color: var(--red);">handbook</a>
-    <a href="/about/index.html",        style="color: var(--yellow);">about</a>
-  </nav>
-</header>
+<header style="height: 142px;"></header>
+
+<script>
+(async function () {
+    const headerHTMLRequest = await fetch('/header.html');
+    const headerHTML = await headerHTMLRequest.text();
+    document.querySelector('header').innerHTML = headerHTML;
+})();
+</script>
 
   <div class="contents">
     <p>this is the writing page, and will contain a series of links (previews? yet to be styled) to various essays i have already written (mostly pdfs in latex) and newer writings specifically for this website.</p>

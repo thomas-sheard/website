@@ -7,29 +7,27 @@
     <link rel="stylesheet" href="/styling/main.css">
 </head>
 
-<header>
-  <h1>
-    thomas sheard.
-  </h1>
-  <nav id="navbar">
-    <a href="/index.html",               style="color: var(--blue);">home</a>
-    <a href="/hobbies/index.html",      style="color: var(--magenta);">hobbies</a>
-    <a href="/writing/index.html",      style="color: var(--green);">writing</a>
-    <a href="/handbook/index.html",     style="color: var(--red);">handbook</a>
-    <a href="/about/index.html",        style="color: var(--yellow);">about</a>
-  </nav>
-</header>
+<header style="height: 142px;"></header>
+
+<script>
+(async function () {
+    const headerHTMLRequest = await fetch('/header.html');
+    const headerHTML = await headerHTMLRequest.text();
+    document.querySelector('header').innerHTML = headerHTML;
+})();
+</script>
 
 <body>
 
     <div class="contents">
 
       <p>hello! welcome to my website; a record of what i get up to in my spare time and the things i am learning along the way.</p>
-      <p>this site is still very much a work in progress, but there are lots of things i am looking to add.</p>
-      <p>ideas include: a gallery of images, a guestbook for people to leave comments, and drop down menus for expansion of each section above (see each page for more details!)</p>
+      <p>this site is still very much a work in progress, but there are lots of things i am looking to add. visit each page above to see what they're about.</p>
       <p>stay awhile, and enjoy!</p>
-      <p><a href="https://wiby.me/surprise/" target="_blank">(a fun link to a random website)</a></p>
 
+      <center>
+      <p><a href="https://wiby.me/surprise/" target="_blank">(a fun link to a random website)</a></p>
+      </center>
     </div>
 
 </body>

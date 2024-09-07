@@ -43,17 +43,88 @@ nav {
 
   a {
     margin: 20px;
+    padding: 0px 12px;
     font-size: 21pt;
     font-weight: bold;
-    color: var(--dark);
     text-decoration: none;
+    color: var(--color);
   }
 
   a:hover {
     text-decoration: none;
+    border-radius: 7px;
+    color: var(--dark);
+    background-color: var(--color);
   }
 
+  .dropdown .dropbtn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropbtn {
+    padding: 0px;
+    margin:0px;
+    font-family: monospace;
+    border: none;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: var(--dark);
+    color: var(--color);
+  }
+
+  .dropdown:hover .dropbtn {
+    color: var(--dark);
+    background-color: var(--color);
+
+    a {
+      color: var(--dark);
+    }
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+
+    z-index: 1;
+    width: 100%;
+
+    a {
+      /*font-family: serif;*/
+      float: none;
+      display: block;
+      padding: 7px;
+      padding-left: 11px;
+      margin: 0px; /* change to nest dropdown elements inside menu */
+      text-align: left;
+      color: var(--dark);
+      font-size: 12pt;
+    }
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+    background-color: var(--color);
+    padding: 0px;
+    margin: 0px;
+
+    a:hover {
+      background-color: var(--dark);
+      color: var(--color);
+    }
+  }
 }
+
 
 
 body {
