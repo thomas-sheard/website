@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thomas' site</title>
+    <link rel="stylesheet" href="/styling/main.css">
+</head>
+
+<header style="height: 142px;"></header>
+
+<script>
+(async function () {
+    const headerHTMLRequest = await fetch('/header.html');
+    const headerHTML = await headerHTMLRequest.text();
+    document.querySelector('header').innerHTML = headerHTML;
+})();
+</script>
+
+<body>
+
+    <div class="contents">
+
+      <h1>Building my neovim config from scratch</h1>
+
+      <p>
+      Since learning vim motions, neovim has quickly become my preferred text editor and IDE for writing literally anything. As anyone who has gone down the rabbit hole of vim (or more generally, system) customisation (also termed <a href="https://reddit.com/r/unixporn", title="i promise my rice doesn't have any anime girls", target="_blank">ricing</a>) knows - the rabbit hole is <em>deep</em>. <br>
+      My neovim config is forever evolving closer to my idea of a perfect development environment, alongside my understanding of my system as a whole. <br>
+      However I find that I modify my config sporadically, in short and intense bursts - such as when my frustration with a certain feature finally gets the better of me and I decide to 'just do it myself'. <br>
+      Increasingly, my neovim configuration has become unwieldy and difficult to maintain; every time I delve into the dotfiles I have to relearn many things that I have already been through which is frustrating in and of itself, and is also a waste of time. Many 2AMs have come and gone while I re-read the documentation instead of actually fixing what I intended to. <br>
+      This has led me to the (quite rational, I think) decision to to re-write the entire thing from scratch, and document the process for future reference. <br>
+      </p>
+
+      <h2>Getting started</h2>
+
+      <p>
+      My preferred directory hierarchy for a modular Neovim config looks something like this:
+      </p>
+
+        <pre>~
+|- .config/
+    |- nvim/
+        |- init.lua
+        |- lua/
+            |- user/
+                |- init.lua
+                |- plugin_1.lua
+                |- plugin_2.lua
+                :
+                |- plugin_n.lua</pre>
+
+      <p>
+      This because it allows us to do several handy things. 
+      Firstly, we can localise our config for each plugin in <code>plugin.lua</code> files, which makes everything much more maintainable.
+      Secondly, we can create multiple user profiles that have <b>different configurations</b>, and we can swap between them by simply changing the directory that we source in the first <code>init.lua</code>.
+      This is neat, as it provides lots of scope for experimentation (you could create forks of your user config to safely try new things!), and anybody with this hierarchy can simply pull somebody else's profile.
+      </p>
+
+      <h2> First steps </h2>
+
+      <p>
+      To start with this, we first need to replicate the file tree above, not including the <code>package.lua</code> files (just make the <code>init.lua</code>s for now).
+      We then want to populate the <em>first</em> <code>init.lua</code> file like this:
+      </p>
+      <pre>require("user")</pre>
+      <p>
+      This just tells nvim which 'profile' to use; this is what you would change to swap between different configs, as all config files are contained within the <code>required()</code> directory.
+      </p>
+      
+      <h2> Basic preference customisation </h2>
+
+      <p> 
+      The most important thing (in my opinion) to start with are <code>keymaps</code> and <code>options</code>. 
+      This is because they do not require a plugin manager to setup and will make building the rest of our config much smoother.
+      </p>
+      <p>
+      To do this, <code>$ touch keymaps.lua</code> and <code>options.lua</code> in the <code>user</code> directory.
+      </p>
+
+      <h3>Keymaps</h3>
+
+      <p>
+      The most important key to bind for this section is the <code>leader</code> key, which we actually define in the <code>user/init.lua</code> file. Your leader key acts a signal key that activates a second layer of keybinds in Normal mode, and can be used to make an effectively unlimited amount of key chords for whatever your heart may desire. To define the <code>leader</code> key, we put this in the second <code>init.lua</code> file:
+      </p>
+      <pre>vim.g.mapleader = " "</pre>
+      <p>
+      I use the spacebar as my leader key, as it is very easily reachable and has no critical function in normal mode (it jumps the cursor forward similar to <code>l</code>). 
+      Note that whichever key is mapped to the leader key will have a delay on it's usual function while nvim waits for further inputs to activate chord mappings, but will still enact the primary function after this delay.
+      </p>
+
+      <p>
+      Now to actually add some keybinds in the <code>keymaps.lua</code> file! A keymap in vim usually has the format of:
+      </p>
+      <pre>vim.keymap.set(mode, key, command, opts)</pre>
+      <p>
+      Which is not very long but I don't like typing it over and over (and often we don't need the <code>opts</code> arg) so we can create a lua function to make it shorter!
+      </p>
+      <pre> <em>-- shorten keymap function</em>
+local function keymap(mode, key, command, opts)
+  opts = opts or {}
+  vim.keymap.set(mode, key, command, opts)
+end</pre>
+      <p>
+      This just sets the function <code>keymaps()</code> to take the same paramaters as <code>vim.keymap.set()</code>, and adds the condition that the <code>opts</code> argument can be omitted (an empty lua table). Yay!
+      </p>
+      <p>
+      Following this, we can now start defining keymaps with the <code>keymaps()</code> function. Let's start with a simple example:
+      </p>
+      <pre>keymap('i', '&ltC-c&gt', '&ltEsc&gt') <em>-- lol</em></pre>
+      <p>
+      We start by calling <code>keymaps()</code>. All arguments are strings, passed with single quotations. The first argument is the mode(s) that the keymap should be active in; <code>i</code> for insert, <code>n</code> for normal, <code>v</code> for visual, etc.<br>
+      The second argument is the key(s) we want to map. Less than / greater than symbols indicate a named key instead of literal keypresses; passing <code>Esc</code> would be interpreted as pressing uppercase E, lowercase s and lowercase c at the same time, while <code>&ltEsc&gt</code> means the actual escape key. To use pre-existing keychords, we use both <code>&lt &gt</code> and a hyphen; <code>&ltC-c&gt</code> signifies Ctrl + c.
+      </p>
+      <p>
+      This keybind, then, takes the key chord <code>Ctrl + c</code> in <code>insert</code> mode and executes <code>Esc</code>. <br>
+      (The astute may have noticed that this is, frankly, a rather silly keybind to have, as both Ctrl + c and Esc have the effect of returning to normal mode when pressed. The reason I have this is to do with using snippets, which we will get to later -- it's just because <code>&ltC-c&gt</code> and <code>Esc</code> have subtly different behaviours, which results in snippets not being activated properly when the former is used to complete them, and I prefer using Ctrl over reaching for escape.)
+      </p>
+      <p> 
+      Now we have the basics down, we can go crazy with it. Here is my <code>keymaps.lua</code> file, with most keymaps commented with explanation:
+      </p>
+      <pre> <em>-- shorten keymap function</em>
+local function keymap(mode, key, command, opts)
+  opts = opts or {}
+  vim.keymap.set(mode, key, command, opts)
+end
+
+<em>-- documentation:</em>
+<em>-- <a href="https://vimhelp.org/vim_faq.txt.html#faq-20.5", target="_blank">https://vimhelp.org/vim_faq.txt.html#faq-20.5</a></em>
+
+<em>-- SYSTEM</em>
+
+keymap('i', '&ltC-c&gt', '&ltEsc&gt') <em>-- I CAN EXPLAIN</em>
+
+keymap('n', '&ltleader&gtw', '&ltC-w&gt') <em>-- remap window navigation before i remap &ltC-w&gt</em>
+keymap('n', '&ltC-w&gt', ':w&ltcr&gt') <em>-- saving</em>
+keymap('n', '&ltC-s&gt', ':so&ltcr&gt') <em>-- sourcing</em>
+keymap('n', '&ltC-q&gt', ':q&ltcr&gt') <em>-- quitting</em>
+keymap('n', '&ltleader&gtc', vim.cmd.nohlsearch) <em>-- clear search highlighting</em>
+
+<em>-- NAVIGATION</em>
+
+keymap('n', '&ltleader&gte', vim.cmd.Oil) <em>-- file explorer</em>
+keymap('n', '&ltleader&gtu', ':UndotreeToggle&ltCR&gt') <em>-- toggle undotree</em>
+
+<em>-- MOTIONS</em>
+
+keymap('n', 'j', 'gj') <em>-- allow j / k to move within lines</em>
+keymap('n', 'k', 'gk') <em>-- for multiline text</em>
+
+keymap('v', 'J', ":m '&gt+1&ltCR&gtgv=gv") <em>-- visual mode text shifting</em>
+keymap('v', 'K', ":m '&lt-2&ltCR&gtgv=gv") <em>-- using J / K (down, up)</em>
+
+keymap('n', '&ltEnter&gt', 'o')
+
+keymap('n', 'o', 'o&ltEsc&gt') <em>-- preference for o / O (escapes after motioning)</em>
+keymap('n', 'O', 'O&ltEsc&gt')
+
+keymap('n', '&ltC-d&gt', '&ltC-d&gtzz') <em>-- cursor remains centered in &ltC-d&gt / &ltC-u&gt</em>
+keymap('n', '&ltC-u&gt', '&ltC-u&gtzz')
+
+keymap('n', '&ltC-j&gt', '&ltC-e&gt') <em>-- scroll screen without cursor</em>
+keymap('n', '&ltC-k&gt', '&ltC-y&gt')
+
+<em>-- QOL</em>
+
+keymap('n', '=', 'V=') <em>-- easier indenting</em>
+keymap('n', 'Y', 'Vy') <em>-- easier line yanking</em>
+
+keymap('n', '&ltC-n&gt', 'a&ltEnter&gt&ltEsc&gtk$') <em>-- &ltC-n&gt to break line at cursor</em>
+
+keymap('n', '&ltC-a&gt', 'A;&ltC-c&gt') <em>-- appending ; to current line in normal / insert mode</em>
+keymap('i', '&ltC-a&gt', '&ltC-c&gtA;&ltC-c&gt')
+
+keymap('n', '&ltleader&gtlc', ':VimtexCompile&ltCR&gt')
+keymap('n', '&ltleader&gtlv', ':VimtexView&ltCR&gt') 
+      </pre>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thomas' site</title>
+    <link rel="stylesheet" href="/styling/main.css">
+</head>
+
+<header style="height: 142px;"></header>
+
+<script>
+(async function () {
+    const headerHTMLRequest = await fetch('/header.html');
+    const headerHTML = await headerHTMLRequest.text();
+    document.querySelector('header').innerHTML = headerHTML;
+})();
+</script>
+
+<body>
+
+    <div class="contents">
+      <h1>
+        NeoVim (nvim)
+      </h1>
+
+      <p><a href="https://neovim.io/", target="_blank">NeoVim</a> (or 'nvim') is my text editor and IDE of choice. It does exactly what it says on the tin while offering a range of extremely powerful plugins to fully customise your experience. Also, <a href="https://vim.rtorr.com/", target="_blank">vim motions</a> are both fast and fun to use once you are past the initial learning curve (cliff?)</p>
+
+      <h2>
+        Entries
+      </h2>
+
+      <p>
+      <a href="/handbook/nvim/nvim_config_from_scratch.html">Writing my NeoVim config from scratch</a>
+      </p>
+
+    </div>
+
+</body>
+</html>

@@ -134,11 +134,12 @@ body {
 .contents {
   a {
     border-radius: 5px;
-    text-decoration: none;
+    color: var(--dark);
+    text-decoration: underline #8b008b 1px;
   }
 
   a:hover {
-    text-decoration: underline;
+    text-decoration: double underline #8b008b 1px;
   }
 
   background-color: var(--light);
@@ -154,39 +155,60 @@ body {
     text-align: center;
     font-size: 21pt;
     margin: 0px;
-    padding: 7pt;
+    padding: 7px;
+    line-height: 2;
   }
 
   h2 {
     font-size: 17pt;
     margin: 0px;
-    padding: 7pt;
+    padding-left: 24px;
+    line-height: 3;
+  }
+
+  h3 {
+    font-size: 14pt;
+    margin: 0px;
+    padding-left: 24px;
+    line-height: 3;
   }
 
   p {
-    padding-left: 7pt;
-    padding-right: 7pt;
+    padding-left: 7px;
+    padding-right: 7px;
     font-family: serif;
     font-size: 12pt;
     margin: 0px;
+    line-height: 2.4;
     /*text-align: justify;*/
   }
 
-  .code {
+  code {
+    background-color: var(--dark);
+    color: var(--light);
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-weight: bold;
+  }
+
+  pre {
     color: var(--light);
     background-color: var(--dark);
     margin: 7px;
-    border-radius: 5px;
+    border-radius: 7px;
+    font-size: 12pt;
+    line-height: 1.2;
+    font-family: monospace;
+    font-weight: bold;
+    padding: 7px;
 
-    p {
+    a {
+      color: var(--light);
+      font-size: 12pt;
       line-height: 1.2;
       font-family: monospace;
       font-weight: bold;
-      padding-left: 2px;
     }
-
-    padding: 7px;
-
   }
-
 }
+
