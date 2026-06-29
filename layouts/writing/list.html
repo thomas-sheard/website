@@ -1,0 +1,14 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+
+    <div class="entries-list">
+        {{ range .Pages }}
+            {{ $styleBlock := printf "style=--color:%s;" (.Params.color | default "var(--blue)") }}
+            
+            <div class="entries" {{ $styleBlock | safeHTMLAttr }}>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </div>
+        {{ end }}
+    </div>
+{{ end }}

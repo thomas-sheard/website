@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="/styling/main.css">
+    {{ if .Param "math" }}
+      {{ partialCached "math.html" . }}
+    {{ end }}
+  </head>
+
+  <header>
+
+    <script type="module" src="/scripts/"></script>
+
+    <h1>thomas sheard.</h1>
+    <nav id="navbar">
+      <a href="/" style="--color: var(--blue);">home</a>
+
+      {{ range .Site.Sections }}
+      {{ $styleBlock := printf "style=--color:%s;" (.Params.color | default "var(--blue)") }}
+      {{ if .Sections }}
+      <div class="dropdown" {{ $styleBlock | safeHTMLAttr }}>
+        <button class="dropbtn">
+          <a href="{{ .RelPermalink }}">{{ .Title | lower }}</a>
+        </button>
+        <div class="dropdown-content">
+          {{ range .Sections }}
+          <a href="{{ .RelPermalink }}">{{ .Title | lower }}</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ else }}
+      <a href="{{ .RelPermalink }}" {{ $styleBlock | safeHTMLAttr }}>{{ .Title | lower }}</a>
+      {{ end }}
+      {{ end }}
+
+      {{ with .Site.GetPage "/about" }}
+      <a href="{{ .RelPermalink }}" style="--color: var(--yellow);">about</a>
+      {{ end }}
+    </nav>
+
+  </header>
+
+  <body>
+    <div class="contents">
+      {{ block "main" . }}{{ end }}
+    </div>
+
+    <footer>
+      <center>
+        <button id="toTopButton" style="display: none;">back to top</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+      </center>
+    </footer>
+
+  </body>
+</html>

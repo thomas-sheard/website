@@ -1,0 +1,21 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    
+    {{ .Content }}
+
+    <div class="entries" style="--color: var(--red)">
+        <a href="/handbook/nvim/nvim_config_from_scratch/">Writing my Neovim config from scratch</a>
+    </div>
+    <div class="entries" style="--color: var(--magenta)">
+        <a href="/hobbies/crochet/whale/">A humpback whale!</a>
+    </div>
+    <div class="entries" style="--color: var(--green)">
+        <a href="/writing/essays/contrast_in_dorian_gray/">Contrast and Identity in <em>The Picture of Dorian Gray</em></a>
+    </div>
+
+    <center>
+        <div class="entries" style="--color: var(--blue)">
+            <a href="https://wiby.me/surprise/" target="_blank">(or go somewhere else interesting)</a>
+        </div>
+    </center>
+{{ end }}

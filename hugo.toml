@@ -1,0 +1,15 @@
+baseURL = 'https://thomas.sheards.net/'
+locale = 'en-us'
+title = "thomas' site"
+theme = ""
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)'], ['$', '$']]
+[params]
+  math = true
