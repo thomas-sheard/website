@@ -1,5 +1,5 @@
 baseURL = 'https://thomas.sheards.net/'
-locale = 'en-us'
+locale = 'en-au'
 title = "thomas' site"
 theme = ""
 
@@ -7,7 +7,6 @@ theme = ""
   [markup.highlight]
     noClasses = true
     style = "onedark"
-    guessSyntax = true
   [markup.goldmark]
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
@@ -17,3 +16,5 @@ theme = ""
           inline = [['\(', '\)'], ['$', '$']]
 [params]
   math = true
+  [params.meta]
+  favicon = true

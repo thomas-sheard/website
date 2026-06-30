@@ -51,7 +51,7 @@ nav {
   padding-bottom: 20px;
 
   a {
-    margin: 20px;
+    margin: 16px;
     padding: 0px 12px;
     font-size: 21pt;
     font-weight: bold;
@@ -153,7 +153,7 @@ body {
   /*margin-bottom: 200px;*/
 
   a {
-    border-radius: 5px;
+    border-radius: 7px;
     color: var(--dark);
     text-decoration: underline #8b008b 1px;
   }

@@ -4,35 +4,32 @@ draft: true
 title: 'Writing my NeoVim config from scratch'
 ---
 
-## [contents](#contents)
+This entry is *long*. Sorry. I've included a table of contents to make navigation easier, and clicking a section heading will bring you back to it.
 
-This entry is *long*. Sorry. Here\'s a table of contents to make
-navigation easier:
+## [contents](#contents)
 
 1.  [contents](#contents)
 2.  [introduction](#introduction)
 3.  [getting started](#getting_started)
-    a. [first steps](#first_steps)
-    b.  [my keymaps](#my_keymaps_lua)
-    c.  [options](#options)
-    d.  [my options](#my_options_lua)
+    1.  [first steps](#first_steps)
+    2.  [my keymaps](#my_keymaps_lua)
+    3.  [options](#options)
+    4.  [my options](#my_options_lua)
 4.  [plugins](#plugins)
-    a.  [installing a plugin manager](#installing_lazy_nvim)
-    b.  [installing plugins](#installing_plugins)
+    1.  [installing a plugin manager](#installing_lazy_nvim)
+    2.  [installing plugins](#installing_plugins)
 5.  [treesitter](#treesitter)
 6.  [lualine](#lualine)
 7.  [completion](#completion)
-    a.  [the error of my ways](#sequence_break)
-    b.  [lsp management](#lsp_management)
-    c.  [completion engine](#completion_engine)
+    1.  [the error of my ways](#sequence_break)
+    2.  [lsp management](#lsp_management)
+    3.  [completion engine](#completion_engine)
 8.  [luasnip](#luasnip)
 9.  [autopairs and tabout](#autopairs_tabout)
 10. [telescope](#telescope)
 11. [oil](#oil)
 12. [closing remarks](#closing_remarks)
 
-And clicking on any heading or subheading will bring you back to the
-top.
 
 ## [introduction](#contents)
 
@@ -45,7 +42,7 @@ alongside my understanding of my system as a whole.
 
 However I find that I modify my config sporadically, in short and
 intense bursts - such as when my frustration with a certain feature
-finally gets the better of me and I decide to \'just do it myself\'.
+finally gets the better of me and I decide to 'just do it myself'.
 Increasingly, this has become unwieldy and difficult to maintain; every
 time I delve into the dotfiles I have to relearn many things that I have
 already been through, which is both frustrating and a waste of time.
@@ -82,7 +79,7 @@ that have **different configurations**, and we can swap between them by
 simply changing the directory that we source in the first `init.lua`.
 This is neat, as it provides lots of scope for experimentation (you
 could create forks of your user config to safely try new things!), and
-anybody with this hierarchy can simply pull somebody else\'s profile.
+anybody with this hierarchy can simply pull somebody else's profile.
 
 ### [first steps](#contents)
 
@@ -94,9 +91,9 @@ want to populate the *first* `init.lua` like this:
 require('user') 
 ```
 
-This just tells nvim which \'profile\' to use; this is what you would
+This just tells nvim which 'profile' to use; this is what you would
 change to swap between different configs, as all config files are
-contained within the `required()` directory. I\'ll call my user profile
+contained within the `required()` directory. I'll call my user profile
 `core` from this point onward.
 
 The most important things (in my opinion) to start with are `keymaps`
@@ -134,8 +131,8 @@ vim usually has the format of:
 
     vim.keymap.set(mode, key, command, opts)
 
-Which is not very long but I don\'t like typing it over and over (and
-often we don\'t need the `opts` arg) so we can create a lua function to
+Which is not very long but I don't like typing it over and over (and
+often we don't need the `opts` arg) so we can create a lua function to
 make it shorter!
 
      -- shorten keymap function
@@ -149,7 +146,7 @@ This just sets the function `keymap()` to take the same paramaters as
 be omitted (an empty lua table). Yay!
 
 Following this, we can now start defining keymaps with the `keymap()`
-function. Let\'s start with a simple example:
+function. Let's start with a simple example:
 
     keymap('i', '&ltC-c>', '&ltEsc>') -- lol
 
@@ -169,7 +166,7 @@ executes `Esc`.
 (The astute may have noticed that this is, frankly, a rather silly
 keybind to have, as both `Ctrl + c` and `Esc` have the effect of
 returning to normal mode when pressed. The reason I have this is to do
-with using snippets, which we will get to later \-- it\'s just because
+with using snippets, which we will get to later -- it's just because
 `&ltC-c>` and `&ltEsc>` have subtly different behaviours, which results
 in some escape actions not being activated properly when the former is
 used to complete them, and I find Control easier to reach than Escape.)
@@ -180,7 +177,7 @@ with explanation.
 
 ### [my `keymaps.lua` file](#contents)
 
-Some fundamental keybinds, like the previous &ltC-c\> = &ltEsc\>
+Some fundamental keybinds, like the previous &ltC-c> = &ltEsc>
 example, and essential functions like saving, sourcing, and quitting
 files:
 
@@ -239,15 +236,15 @@ Motion remaps, such as `j/k`, being able to move highlighted text with
 
 The `j/k` remaps define simple lua functions, checking whether or not
 there is a count before the motion. If there is not (ie. plain vertical
-navigation) then they\'ll navigate through each display line in
+navigation) then they'll navigate through each display line in
 multiline (broken) text. If there is a count, it will only traverse true
-line numbers. This means that it\'s easy to navigate vertically within
+line numbers. This means that it's easy to navigate vertically within
 broken lines, but relative line numbers are still accurate for counted
-motion. They are lua translations of [u/monkoose\'s vimscript
+motion. They are lua translations of [u/monkoose's vimscript
 solution](https://www.reddit.com/r/neovim/comments/s78e5y/comment/ht8ore6/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button){,=""
 target="_blank"} to this problem.
 
-\
+
 
 Quality of life mappings for common manipulations, like indenting `=`,
 yanking entire lines `Y`, etc:
@@ -262,7 +259,7 @@ yanking entire lines `Y`, etc:
     keymap('n', '&ltC-a>', 'A;&ltC-c>') -- appending ; to current line in normal / insert mode
     keymap('i', '&ltC-a>', '&ltC-c&gtA;&ltC-c>')
 
-And that\'s all! For inbuilt nvim keys, at least - we will add more when
+And that's all! For inbuilt nvim keys, at least - we will add more when
 we start adding plugins.
 
 ### [options](#contents)
@@ -331,7 +328,7 @@ Indenting and (relative) line numbers:
 
     vim.opt.breakindent = true -- indented multi-lines retain indenting on broken text
 
-Other text actions, like searching, completion menus (this won\'t work
+Other text actions, like searching, completion menus (this won't work
 until we have a completion plugin), and spell checking:
 
     -- searching
@@ -339,7 +336,7 @@ until we have a completion plugin), and spell checking:
     vim.opt.hlsearch = true -- highlight on search
     vim.opt.incsearch = true -- live search highlighting updates
 
-    vim.opt.ignorecase = true -- case-insensitive searching (override with \C)
+    vim.opt.ignorecase = true -- case-insensitive searching (override with C)
     vim.opt.smartcase = true -- also override with capitalised query
 
     -- completion
@@ -368,8 +365,8 @@ This is the exciting bit. Plugins are very powerful, and there are *so*
 many of them (like, an absurd amount. Just take a look at some
 ready-to-use neovim configs, like the popular
 [NvChad](https://nvchad.com/){,="" target="_blank"}). A large part of my
-wanting to write this page was that I don\'t even know what some of my
-plugins do any more; I just added them, and they didn\'t do anything
+wanting to write this page was that I don't even know what some of my
+plugins do any more; I just added them, and they didn't do anything
 *bad*, so I kept them. I would like to categorically document which
 plugins I have, and why I have them.
 
@@ -378,7 +375,7 @@ do this with a plugin manager. My preference is `lazy.nvim`, as it
 allows for lazy-loading plugins (only loading them when they are needed
 to reduce startup impact), automatic installation after adding plugins
 to our config, and it uses lua, which matches the rest of our config.
-From what I have heard and read, though, it doesn\'t really matter too
+From what I have heard and read, though, it doesn't really matter too
 much.
 
 ### [installing `lazy.nvim`](#contents)
@@ -400,9 +397,9 @@ to the `lazy.lua` file:
       local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
       if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
-          { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+          { "Failed to clone lazy.nvim:n", "ErrorMsg" },
           { out, "WarningMsg" },
-          { "\nPress any key to exit..." },
+          { "nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
         os.exit(1)
@@ -419,7 +416,7 @@ We can then add all of our plugin setup in the `.setup()` function, and
 the plugin manager will handle the rest! If we restart nvim, we should
 have access to the `:Lazy` command, which will bring up a buffer showing
 all of the currently loaded and installed plugins, of which there will
-be none just yet. Let\'s fix that!
+be none just yet. Let's fix that!
 
 ### [installing plugins](#contents)
 
@@ -427,8 +424,8 @@ I must admit I am getting rather sick of the default neovim colors:
 
 ![yuck!](/images/nvim_config_from_scratch/default_nvim_colours.png)
 
-It\'s high time we address the most important
-part of a config: the palette.\
+It's high time we address the most important
+part of a config: the palette.
 I use the same theme, OneDark, for my entire system (including the
 website!) at the minute. 
 Conveniently, there is a plugin for this. We
@@ -565,7 +562,7 @@ other hand, why are you suggesting a function from a library I have not
 imported and then automatically replacing something I wrote with
 another, categorically incorrect completion? Stop that.
 
-\
+
 
 Most frustratingly, I found that autopairs (automatically inserting the
 closing pair to an opening character, like `({[<"` ) simply did not work
@@ -575,14 +572,14 @@ These plugins are ultimately what made me want to write this entry, and
 this entry is what got me started on this whole website business in the
 first place, so getting this right is important to me.
 
-\
 
-I toyed briefly with the idea of writing snippets (a topic we\'ll get to
+
+I toyed briefly with the idea of writing snippets (a topic we'll get to
 in a moment) for each language, but this is essentially writing my own
-completion suggestions from scratch. This is what we might call a \"bad
-idea\".
+completion suggestions from scratch. This is what we might call a "bad
+idea".
 
-\
+
 
 There are a couple of things we need to get completion working: a
 completion engine that handles the display and interactivity of a
@@ -598,9 +595,9 @@ to be minimal, use as few plugins as I could and write autopairing in
 luasnip. Turns out what I want from pairing behaviour is way overscoped
 for snippets, so my actual options are to write my own plugin in lua, or
 to do more research and actually read the documentation of the available
-plugins. I tried the former; another \"bad idea\". Autopairs does
+plugins. I tried the former; another "bad idea". Autopairs does
 actually seem like the best option for me. The thing that frustrated me
-about it was a lack of \'tabout\' behaviour:
+about it was a lack of 'tabout' behaviour:
 
     Before:     Input:     After:
     (|)         &ltTab>      ()|
@@ -613,28 +610,28 @@ autopairing behaviour (a pretty big project), or writing my plugin as an
 extension to an existing autopair plugin and exclusively handles the
 tabout behaviour, requiring fully understanding how the autopairs plugin
 works under the hood. Luckily, someone has already written a separate
-tabout plugin \-- called
-[tabout.nvim](https://github.com/abecodes/tabout.nvim), funnily enough \-- so we\'ll use that when we get
+tabout plugin -- called
+[tabout.nvim](https://github.com/abecodes/tabout.nvim), funnily enough -- so we'll use that when we get
 there.
 
-\
+
 
 While this is an annoying realisation to make this deep into the
 project, I think it is a perfect example of why documentation should one
-thousand percent be the first point of call whenever you\'re having
+thousand percent be the first point of call whenever you're having
 issues with a program. Regardless, I still think re-writing the config
 is worth it for the learning experience #teachablemoment. Continuing
-on\...
+on...
 
 ### [lsp management](#contents)
 
-We\'ll set LSP up first, because the package manager,
+We'll set LSP up first, because the package manager,
 [Mason](https://github.com/williamboman/mason.nvim), we will use needs to be loaded before its dependencies
 (ie. the rest of our completion setup). Language servers can be
 installed through CLI tools like npm, but I prefer a dedicated interface
 (hence Mason).
 
-We first need to add the core LSP functionality to nvim, as it\'s not
+We first need to add the core LSP functionality to nvim, as it's not
 installed by default, and then we can load Mason and its bridge plugin
 to nvim. In `lazy.lua`:
 
@@ -685,16 +682,16 @@ variable, but most can be set up with
 `lspconfig.`*`&ltlsp_name>`*`.setup {}`. Use the [lspconfig
 documentation](https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md) to check!
 
-We can\'t really verify these are working until we have a completion
-engine, so let\'s go do that.
+We can't really verify these are working until we have a completion
+engine, so let's go do that.
 
 ### [completion engine](#contents)
 
-I\'ve chosen to use [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for the completion plugin. It has a good rep, is quick,
+I've chosen to use [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for the completion plugin. It has a good rep, is quick,
 provides a decent amount of control over which suggestions you want to
 be shown, and is written in Lua like rest of our config.
 
-\
+
 
 We can import and require `nvim-cmp` and its dependencies as usual in
 `lazy.lua`:
@@ -721,15 +718,15 @@ automatically insert **structures** instead of just text, allowing you
 to define line breaks, paramaters and, dynamic cursor locations that can
 be jumped between. These can be phenomenally powerful, allowing
 shortcuts for common boilerplate structures in just a couple of
-keypresses. I\'ll go over setting up a snippet plugin, but might give
+keypresses. I'll go over setting up a snippet plugin, but might give
 writing them the deserved attention in a separate post!
 
-\
+
 
 We also need to construct the `cmp.lua` to configure the plugin. This
 file has some fairly complex keybinds that use `fallback()` functions to
 check a list of different potential key actions in order of priority.
-These are important for tabout behaviour, which we\'ll set up later. The
+These are important for tabout behaviour, which we'll set up later. The
 big idea, though, is that `fallback` tells a key to enact its default
 action.
 
@@ -827,7 +824,7 @@ action.
 
 This file defines the keymap behaviours for interacting with the
 completion menu, and establishes snippet behaviour. At the bottom of
-this file is where we actually \'pipe\' each of our completion sources
+this file is where we actually 'pipe' each of our completion sources
 into the completion engine, meaning the completion menu should now be
 populated:
 
@@ -864,7 +861,7 @@ it in `lazy.lua`:
       'L3MON4D3/LuaSnip'
     },
 
-For this plugin, we\'re going to use a modular configuration that
+For this plugin, we're going to use a modular configuration that
 discriminates by filetype. This is really nice for avoiding bloat and
 keeping a tight, well defined set of just the snippets you need. The
 setup will look something like this:
@@ -918,20 +915,20 @@ there is no snippet interaction available, then tab should just add
 whitespace as normal (that line is courtesy of
 [u/MunifTanjim](https://www.reddit.com/r/neovim/comments/zrcrv1/comment/j12xw3x/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button)).
 
-\
+
 
 As an example, say that both myself and the `rust_analyzer` LSP have
 defined a snippet for `fn` that inserts a template for a function
 definition. The keystrokes for activating my snippet would be
-`fn&ltTab>`, while the LSP snippet would be `fn&ltC-j>&ltTab>`. It\'s
-not a huge difference (which is a good thing) but it\'s still easier to
+`fn&ltTab>`, while the LSP snippet would be `fn&ltC-j>&ltTab>`. It's
+not a huge difference (which is a good thing) but it's still easier to
 use something that I have defined than what the LSP provides, which
 addresses the issue I had with third party completion not behaving in
 the way I expected or wanted it to.
 
-\
 
-This isn\'t really the expected or intuitive way of setting this up,
+
+This isn't really the expected or intuitive way of setting this up,
 though. What would be more usual is to let cmp handle all of the snippet
 activation, and just define jumping within snippets in the LuaSnip
 config. This might look something like this:
@@ -953,21 +950,21 @@ config. This might look something like this:
 
 This would mean that all user-defined snippets are treated as a cmp
 source and just show up on the completion menu when their trigger is
-typed. It\'s worth spending some time thinking about which keybinds and
+typed. It's worth spending some time thinking about which keybinds and
 behaviours make sense to you individually. (Regardless of which is used,
-autosnippets will always execute automatically if they\'re triggered).
+autosnippets will always execute automatically if they're triggered).
 
 We can then tell LuaSnip where to look for snippets by calling a `load`
 function in `luasnip.lua`:
 
     require('luasnip.loaders.from_lua').lazy_load({paths = '~/.config/nvim/lua/core/luasnip/'})
 
-I\'ve used `.lazy_load`, which will only load files as needed by
+I've used `.lazy_load`, which will only load files as needed by
 filetype. This is how we get filetype-filtered snippets. The other
 option is `.load`, which will just load all the snippet files regardless
 of filetype.
 
-\
+
 
 To test our setup we can define some simple snippets and try them out in
 suffixed files. To define a snippet in one of the `luasnip/` files, we
@@ -980,23 +977,23 @@ basic functions are `s` and `t` for snippet creation and text:
     local s = ls.snippet -- make a snippet
     local t = ls.text_node -- write text
 
-I\'m planning on writing my own entry to explain snippet syntax where
-I\'ll try and fully understand and document how they work, but for now
-we\'ll just make the most basic snippet possible:
+I'm planning on writing my own entry to explain snippet syntax where
+I'll try and fully understand and document how they work, but for now
+we'll just make the most basic snippet possible:
 
     -- all.lua
     return {
       s("hi", t("Hello world!")),
     }
 
-With the `return` statement we can see that we\'re just passing a lua
+With the `return` statement we can see that we're just passing a lua
 table of snippets to luasnip when it calls the file. Each snippet is
-brought into scope with `s()` which is a function that we\'ve passed two
+brought into scope with `s()` which is a function that we've passed two
 arguments. The first, `"hi"` is the **trigger** for the snippet; what
 the user has to type for it to expand. This argument can be replaced
 with a table of options, but for a snippet this simple we can just pass
 a string. The second argument is another function, `t()` which defines a
-\"text node\" \-- when by itself this just defines what the snippet
+"text node" -- when by itself this just defines what the snippet
 should expand to. We pass a string to this function, `"Hello world!"`,
 so when we put it all together we have a snippet that is triggered on
 `hi` and expands to `Hello world!`
@@ -1005,7 +1002,7 @@ so when we put it all together we have a snippet that is triggered on
     hi              &ltTab>         Hello world!
 
 These are a bit tricky to demonstrate without using it yourself or
-seeing a video, so this will have to do I\'m afraid.
+seeing a video, so this will have to do I'm afraid.
 
 We can also define our filetype-specific snippets, for example in
 `html.lua`:
@@ -1027,24 +1024,24 @@ We can also define our filetype-specific snippets, for example in
     } 
 
 These will only be loaded by luasnip for files with the correct
-extension, `.html` in this case (they\'re also loaded on buffer
+extension, `.html` in this case (they're also loaded on buffer
 instantiation, so this will still work properly if you navigate to a
 different filetype within neovim!)
 
 Both of these snippets are the same as the previous example, just with
 different text. Because of the filetype filtering, `ht` will only prompt
-a snippet expansion in html files. We\'ve also overridden the `hi`
+a snippet expansion in html files. We've also overridden the `hi`
 snippet from `all.lua`. In a html file both of these will be shown as
 options, but the filetype specific snippet will be given higher priority
 by default.
 
-\
 
-That\'s pretty much it as far as basic snippet setup, but they can do a
-lot more than just expand text! I\'ll link to the snippets page **here**
+
+That's pretty much it as far as basic snippet setup, but they can do a
+lot more than just expand text! I'll link to the snippets page **here**
 when I get around to writing it. I was going to use snippets for
 autopairing, but the behaviour I want was just too complex for them so
-I\'ve reverted to using dedicated plugins for them, which we\'ll do now!
+I've reverted to using dedicated plugins for them, which we'll do now!
 
 ## [autopairs](#contents)
 
@@ -1058,22 +1055,21 @@ This took a lot of time to do but I think it was very much worth it. I
 have a much better understanding of neovim, lua, and my configuration,
 and have far more confidence to tweak my dotfiles as I see fit. Getting
 things like autopairing / tabout working properly was also really
-interesting, and it\'s satisfying to have my entire development pipeline
+interesting, and it's satisfying to have my entire development pipeline
 work in a way that I find intuitive.
 
-\
 
 If there happens to be anyone following this for their own config,
 please note that writing this entry was not a smooth or continuous
 process. I was troubleshooting as I went and jumping back and forth
 between different sections to make sure all of the plugins worked nicely
-together. I\'m almost certain there will be something I\'ve missed or
+together. I'm almost certain there will be something I've missed or
 gotten wrong or forgotten to update after tweaking my files. For the
 most accurate and up-to-date version of this config, see [my nvim
 dotfiles](https://github.com/thomas-sheard/dotfiles/tree/main/nvim/.config/nvim)
 on github.
 
-I\'m also not planning on updating this page as I continue to modify my
+I'm also not planning on updating this page as I continue to modify my
 config; this was just a from-nothing to functional IDE with all my
 preferences as a way of documenting the process and forcing myself to
 understand the things I was doing.
