@@ -1,6 +1,5 @@
 ---
-date: '2026-06-30T11:18:54+10:00'
-draft: true
+date: '2025-02-21'
 title: 'BBC Micro'
 ---
 
