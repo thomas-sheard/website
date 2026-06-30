@@ -257,6 +257,7 @@ body {
     border-radius: 7px;
     padding: 2px 2px 3px 7px;
 
+    line-height: 1.4;
     white-space: pre-wrap;
 
     a {
