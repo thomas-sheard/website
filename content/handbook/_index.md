@@ -1,8 +1,9 @@
 ---
 title: 'Handbook'
 weight: 3
+layout: top
 cascade:
-  params:
+    params:
     color: "var(--red)"
 ---
 

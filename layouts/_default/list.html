@@ -1,16 +1,19 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    {{ .Content }}
+  <div class="back-button">
+    {{ with .Parent }}
+      <a href="{{ .RelPermalink }}">cd ..</a>
+    {{ end }}
+  </div>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="entries-list">
+    {{ range .Pages }}
+    {{ $styleBlock := printf "style=--color:%s;" (.Params.color | default "var(--blue)") }}
 
-    <div class="entries-list">
-        {{ range .Pages }}
-            <!-- Generate the full style attribute string inside the pipeline -->
-            {{ $styleBlock := printf "style=--color:%s;" (.Params.color | default "var(--blue)") }}
-            
-            <div class="entries" {{ $styleBlock | safeHTMLAttr }}>
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </div>
-        {{ end }}
+    <div class="entries" {{ $styleBlock | safeHTMLAttr }}>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
     </div>
+    {{ end }}
+  </div>
 {{ end }}
 

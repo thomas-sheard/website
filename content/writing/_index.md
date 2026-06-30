@@ -1,6 +1,7 @@
 ---
 title: 'Writing'
 weight: 2
+layout: top
 cascade:
     params:
         color: "var(--green)"
