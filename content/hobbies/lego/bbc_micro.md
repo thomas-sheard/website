@@ -10,13 +10,12 @@ pop and then refused to turn on). I thought it would be fun to design
 him a small lego replica of the machine as a Christmas gift. Here are
 some photos of both the model and the real thing:
 
-![](/images/bbc_micro_instructions/model_main.jpg)
-![](/images/bbc_micro_instructions/model_rear.jpg)
-![](/images/bbc_micro_instructions/model_top.jpg)
-![](/images/bbc_micro_instructions/crt_monitor_front.jpg)
-![](/images/bbc_micro_instructions/bbc_micro_wire.jpg)
-![](/images/bbc_micro_instructions/mum_building.jpg)
-
+![model_main](/images/bbc_micro_instructions/model_main.jpg)
+![model_rear](/images/bbc_micro_instructions/model_rear.jpg)
+![model_top](/images/bbc_micro_instructions/model_top.jpg)
+![crt_monitor_front](/images/bbc_micro_instructions/crt_monitor_front.jpg)
+![bbc_micro_wire](/images/bbc_micro_instructions/bbc_micro_wire.jpg)
+![mum_building](/images/bbc_micro_instructions/mum_building.jpg)
 *(Mum testing the instructions with the real thing in the background)*
 
 I designed this model over a couple of days using parts from my

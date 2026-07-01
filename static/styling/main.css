@@ -1,7 +1,7 @@
 :root {
   --dark:#282C34;
-  --light2:#ABB2BF;
-  --light:#C5CBD6;
+  --light:#ABB2BF;
+  --light2:#C5CBD6;
   --red:#E06C75;
   --yellow:#E5C07B;
   --green:#98C379;
@@ -41,6 +41,22 @@ header {
 p {
   font-size: 12pt;
   line-height: 1;
+}
+
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    line-height: 1;
+}
+
+table, th, td {
+    border: none; /*1px solid var(--dark) !important;*/
+}
+
+th, td {
+    padding: 7px;
 }
 
 nav {
@@ -229,10 +245,11 @@ body {
 
     a {
       text-decoration: none;
+      color: var(--dark);
     }
 
     a:hover {
-      text-decoration: underline #8b008b 2px;
+      text-decoration: underline var(--link) 2px;
     }
   }
 
