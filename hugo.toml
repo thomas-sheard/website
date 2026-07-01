@@ -14,6 +14,13 @@ theme = ""
         [markup.goldmark.extensions.passthrough.delimiters]
           block = [['\[', '\]'], ['$$', '$$']]
           inline = [['\(', '\)'], ['$', '$']]
+      [markup.goldmark.extensions.typographer]
+        apostrophe = "'"
+        leftDoubleQuote = '"'
+        leftSingleQuote = "'"
+        rightDoubleQuote = '"'
+        rightSingleQuote = "'"
+
 [params]
   math = true
   [params.meta]

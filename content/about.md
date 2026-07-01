@@ -1,7 +1,7 @@
 ---
 title: About
 date: '2026-06-29'
-layout: list
+layout: top
 ---
 
 
@@ -11,8 +11,9 @@ I'm currently 21, living in Melbourne, and studying mathematical computing at RM
 This website is a documentation of what I get up to in my spare time, and a collation of my interests into a single, cohesive resource.
 
 Visit my 
-[github](https://github.com/thomas-sheard),
-[spotify](https://open.spotify.com/user/0w4f7l11ax0muvp6k48jrsfed?si=efa186aac887475e),
-and [instagram](https://www.instagram.com/thomas__sheard/)
+[LinkedIn](https://www.linkedin.com/in/thomas-sheard-3abbb92b9/),
+[GitHub](https://github.com/thomas-sheard),
+or 
+[Spotify](https://open.spotify.com/user/0w4f7l11ax0muvp6k48jrsfed?si=efa186aac887475e)
 for more of me.
 
