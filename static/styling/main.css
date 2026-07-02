@@ -302,11 +302,12 @@ body {
     }
   }
 
-  img {
-    margin: 7px;
-    border-radius: 7px;
-    width: calc(100% - 14px);
-  }
+img {
+  display: block;
+  border-radius: 7px;
+  width: 100%;
+  margin: 14pt 0pt;
+}
 
 }
 
