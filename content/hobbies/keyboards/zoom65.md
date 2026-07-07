@@ -18,7 +18,9 @@ I started with the frame (also called the case, base, or chassis), which I wante
 Within each of these sizes, there are variations for the actual composition of keys within it. Most keyboards in Australia follow the ANSI (American National Standards Institute) layout, whereas the ISO (International Organisation for Standardisation, of Switzerland) layout, commonly used in Europe, has a larger enter key spanning two rows and language-accommodating modifications for symbols and diacritics (like AltGr, which sits to the right of the spacebar and allows access to various currency symbols). Standardisation as a whole is an [interesting topic](https://www.youtube.com/watch?v=nAsrsMPftOI).
 There are also permutations of the arrangement of alphabetic keys, with QWERTY as the default. AZERTY is French, DVORAK is rearranged for efficiency in English where common letters are easier to access, etcetera.
 
-When choosing a case for a board, size is most important. Each size generally accommodates many layouts, and key positions are remappable in software (and by swapping keycaps). Since I intended to use this board primarily for gaming and light work on my desktop with a fairly small amount desk space, I settled on 65%. Many 65% boards, like the [link](), offset the arrow cluster, which I find displeasing. This sort of dictated my decisions.
+When choosing a case for a board, size is most important. Each size generally accommodates many layouts by having intersecting switch contacts, and key positions are generally remappable in software (and by swapping keycaps)[^1].Since I intended to use this board primarily for gaming and light work on my desktop with a fairly small amount desk space, I settled on 65%. Many 65% boards, like the [link](), offset the arrow cluster, which I find displeasing. This sort of dictated my decisions.
+
+[^1]: Test text
 
 ## Components
 
