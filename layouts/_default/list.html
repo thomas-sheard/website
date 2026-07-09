@@ -11,7 +11,7 @@
     {{ $styleBlock := printf "style=--color:%s;" (.Params.color | default "var(--blue)") }}
 
     <div class="entries" {{ $styleBlock | safeHTMLAttr }}>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     </div>
     {{ end }}
   </div>
