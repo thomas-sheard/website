@@ -3,15 +3,14 @@
     
     {{ .Content }}
 
-    <div class="entries" style="--color: var(--red)">
-        <a href="/handbook/nvim/nvim_config_from_scratch/">Writing my Neovim config from scratch</a>
-    </div>
-    <div class="entries" style="--color: var(--magenta)">
-        <a href="/hobbies/crochet/whale">A humpback whale!</a>
-    </div>
-    <div class="entries" style="--color: var(--green)">
-        <a href="/writing/essays/contrast_in_dorian_gray/">Contrast and Identity in <em>The Picture of Dorian Gray</em></a>
-    </div>
+    {{ range .Params.featured }}
+        {{ with site.GetPage . }}
+            {{ $styleBlock := printf "style=--color:%s;" (.Params.color | default "var(--blue)") }}
+            <div class="entries" {{ $styleBlock | safeHTMLAttr }}>
+                <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+            </div>
+        {{ end }}
+    {{ end }}
 
     <center>
         <div class="entries" style="--color: var(--blue)">

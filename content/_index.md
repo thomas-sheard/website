@@ -1,5 +1,9 @@
 ---
 title: "Welcome!"
+featured:
+  - "/handbook/nvim/nvim_config_from_scratch/"
+  - "/hobbies/crochet/whale"
+  - "/writing/essays/contrast_podg"
 ---
 Hello! Welcome to my website; a record of what I get up to in my spare time and the things I am learning along the way.
 

@@ -239,8 +239,8 @@ body {
     font-family: my_serif;
     margin: 7px;
     line-height: 1.4;
+    font-weight: normal;
     font-size: 12pt;
-    font-weight: bold;
     /*text-align: justify;*/
 
     a {

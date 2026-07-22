@@ -3,6 +3,16 @@ locale = 'en-au'
 title = "thomas' site"
 #theme = ""
 
+[[module.mounts]]
+source = "content"
+target = "content"
+
+[[module.mounts]]
+
+# place double pendulum series in both maths and computing
+source = "content/hobbies/computing/double_pendulum"
+target = "content/hobbies/maths/double_pendulum"
+
 [markup]
   [markup.highlight]
     noClasses = true
