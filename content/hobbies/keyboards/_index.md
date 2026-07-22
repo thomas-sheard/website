@@ -1,6 +1,6 @@
 ---
 title: Keyboards
-weight: 1
+weight: 3
 ---
 
 A rather expensive hobby I have managed to find for myself is building and modding mechanical keyboards.
