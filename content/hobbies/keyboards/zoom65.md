@@ -1,6 +1,7 @@
 ---
 date: '2026-06-30T11:17:30+10:00'
 title: 'Meletrix Zoom65 V1'
+draft: true
 weight: 1
 ---
 
@@ -20,7 +21,7 @@ There are also permutations of the arrangement of alphabetic keys, with QWERTY a
 
 When choosing a case for a board, size is most important. Each size generally accommodates many layouts by having intersecting switch contacts, and key positions are generally remappable in software (and by swapping keycaps)[^1].Since I intended to use this board primarily for gaming and light work on my desktop with a fairly small amount desk space, I settled on 65%. Many 65% boards, like the [link](), offset the arrow cluster, which I find displeasing. This sort of dictated my decisions.
 
-[^1]: Test text
+[^1]: Test footnote text
 
 ## Components
 
@@ -54,5 +55,8 @@ and has given me a fantastic keyboard that I still use regularly on my desktop, 
 
 They have subsequently released a V2 and V3 of this keyboard. While I love mine, I have seen mixed responses to the newer versions. 
 
+<!--
+dates for reference:
 18th birthday (26/01/2023)
 arrived 23/06/2023
+-->
