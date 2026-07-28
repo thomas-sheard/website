@@ -26,3 +26,7 @@ if ! git diff --cached --quiet; then
   git push origin main
 fi
 ```
+```sh
+# git notesync for uni (hourly)
+0 * * * * /home/thomas/bin/bash/notesync.sh
+```
