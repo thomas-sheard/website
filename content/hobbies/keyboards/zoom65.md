@@ -54,7 +54,7 @@ The chassis was a group-buy, which I discuss more thoroughly on the [Keyboards](
 It is a business practice where all orders are taken before production starts to control stock and expenses.
 This resulted in a not-uncommon 5 month delay between ordering and receiving, even being late to the party (though delivery to Australia might cancel that out. Unsure).
 
-Regardless everything did eventually arrive and I had a great time putting it all together. I did have the foresight to take photos throughout the process but they are... wonky. Apologies. 
+Regardless everything did eventually arrive and I had a great time putting it all together. I had the foresight to take photos throughout the process but they are... wonky. Apologies. 
 
 A perhaps surprising amount of the inside of premium keyboards is either foam for acoustics or sheet metal for weight. Several layers of foam in a very specific order that I now cannot remember are clamped in between the switches and a plastic plate, which is in turn fixed in place by the switches clipping into the PCB.
 
