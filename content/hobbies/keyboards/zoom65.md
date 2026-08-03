@@ -1,7 +1,6 @@
 ---
 date: '2026-06-30T11:17:30+10:00'
 title: 'Meletrix Zoom65 V1'
-draft: true
 weight: 1
 ---
 
