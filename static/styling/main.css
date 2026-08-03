@@ -234,11 +234,11 @@ body {
   }
 
   ol {
-    padding-left: 70px;
+    padding-left: 48px;
     padding-right: 7px;
     font-family: my_serif;
     margin: 7px;
-    line-height: 1.4;
+    line-height: 2;
     font-weight: normal;
     font-size: 12pt;
     /*text-align: justify;*/
@@ -266,6 +266,7 @@ body {
 
   code {
     /*background-color: var(--light);*/
+    font-family: my_mono;
     color: var(--dark);
     border-radius: 4px;
     font-weight: 550;
