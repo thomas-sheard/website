@@ -1,11 +1,31 @@
-podg essay
-spotify album art
-zoom65
-magi75
-pendulum 1 through 4
-torus in cube
+>> foundation (WIP)
 
-caterpillars?
-refreq.sty
+[ ] podg essay
+[ ] spotify API
+[X] zoom65
+[ ] magi75
+[ ] nvim conf
+[X] notesync
 
-add "most recent entry" to landing page
+>> planned
+
+[ ] caterpillars
+[ ] pendulum 1
+[ ] pendulum 2
+[ ] pendulum 3
+[ ] pendulum 4
+[ ] torus in cube
+[ ] snippets
+
+>> ideas
+
+[ ] refreq
+[ ] trex mod
+[ ] sway
+[ ] AI
+[ ] nominal conflict in games
+
+>> features
+
+[ ] "most recent entry" on landing page
+[ ] fmt age

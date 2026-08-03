@@ -54,3 +54,14 @@ Identification is much easier after pupation, as moths and butterflies are more 
 
 what if i just... reared them. so i did.
 
+27th they disappeared
+no sign of food being eaten
+
+plant id tangent?
+
+hypothesis is pupation
+disappeared at same time, didn't eat much
+were a bit picky
+were already large (hence why i decided to rear them)
+
+1aug had a poke around and found The Squirmer

@@ -10,7 +10,6 @@ The late 19th century movements of Aestheticism and Decadence were defined by th
 Characterised by poet Arthur Symons as a "new and interesting and beautiful disease" (Symons 1893), the movements were marked by their deliberately provocative exploration of sensual indulgence and pleasure.
 Artists of the movements challenged the contemporary expectations placed on art through the exclusion of conventional elements from their works; form, plot, and didactic purpose could all be rejected to create "art for art's sake" (Burdett 2014).
 
-
 Oscar Wilde, a prominent Aesthete, aligned himself with these ideals: he famously asserted that "all art is quite useless" (Wilde 2022, pp. 4).
 Wilde saw art as a form of creative indulgence that enriched life precisely because it was removed from it.
 His 1891 novel *The Picture of Dorian Gray* exemplifies the Decadent philosophy through its focus on artifice and indulgence.
@@ -20,13 +19,11 @@ Basil idolises Dorian's beauty and seeks to capture it in a faithful portrait, w
 In the exploration of his identity, Dorian grapples with the contrasting influences of Basil's idealism and Lord Henry's cynicism, propelling internal conflicts between self-indulgence and morality.
 This conflict causes Dorian to curse Basil's portrait of him, such that it "bear[s] the burden of his passions and his sins" (90) while Dorian himself retains his beauty.
 
-
 Contrast, by its nature, heightens discrepancies and creates conflict between or within themes and characters, which propels and enriches a plot.
 Wilde employs stark and subtle contrasts throughout the novel.
 The oppositional characterisations of Basil and Wotton presents the difficulty of self-development, as they impose their contradictory ideals of who Dorian should be onto him.
 Dorian's dualistic relationship with his portrait depicts the deterioration of his character, and is symbolic of the discrepancy between his internal and external identity; his actual disposition and moral values versus his public image and behaviour.
 Similarly the oppositional spatial settings of East and West London demonstrate the decline of Dorian's morality as he attempts to self-develop, and highlight the complexities of agency in self-development between the upper and lower echelons of society.
-
 
 Dorian's exploration of his identity fits comfortably within Wilde's oeuvre; much of Wilde's work, especially his essays, presents ideas of self-development and self-indulgence as the requisites for attaining an enriched existence (Wilde 1987).
 This 'enriched existence' is the culmination of an individual's evolution of identity and access to pleasures, a process which Wilde called self-realisation (Gupta 2015, Critchley 2009).
@@ -37,7 +34,6 @@ He calls for the removal of societal obstructions to self-development and self-i
 This topic is worth of investigation because the struggle of self-realisation that Wilde presents is perennial and inextricable from the human condition.
 Regardless of the temporal or cultural context of reception, these ideas are universally applicable.
 By analysing them through art and interpretation, we can gain a deeper understanding of the complexities of our shared human experience, allowing us to lead more authentic and fulfilled lives.
-
 
 ## The ideal self
 
@@ -103,6 +99,7 @@ The use of decaying floral imagery connotes a pure existence being depraved by n
 Wilde's decaying imagery portrays the viscerally destructive consequences of excessive indulgence on one's character.
 He suggests that exclusively pursuing Wotton's ideal of indulgence degrades the internal self, leading to a corrupted and immoral existence.
 Wotton's ideal is thus insufficient for self-realisation, as it destroys internal integrity and results in a corrupted self.
+
 
 The contrast between Dorian's appearance and the portrait's reflection of his morality is also symbolic of the distinction between his internal and perceived quality of character. 
 
