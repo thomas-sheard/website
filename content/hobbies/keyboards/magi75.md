@@ -16,12 +16,10 @@ Most significantly Escape replaces the tilde / backtick (~ / \` ) key that typic
 This key is very important for programming and Unix terminal navigation, as ~ represents the home (user) directory and the backtick is often used as a variation of quotations in both Bash and Markdown (among other things). 
 
 <!--
--->
 For a tangible example, suppose we have just downloaded many images and they have landed in a `Downloads` folder. 
 We'd like to move them to a `project/images` directory.
 In a graphical environment, depending how the images are named, you might be able to click and drag to highlight them all (and use shift or control click to include any stragglers), and then have the target location visible (or even open in another instance of your file explorer), which lets you drag and drop them in.
 This is intuitive, sure, but slow, and needing multiple instances of one software open to perform one (very simple) action is sort of absurd when you think about it.
-
 In a terminal, we can execute a single command that looks something like this:
 ```sh
 ~/Downloads $ mv `ls | grep *.png` ~/first/images
@@ -39,6 +37,7 @@ Images are nested within their own respective directories? A nightmare on a GUI.
 The command line version is slower to learn but quicker to use, and scales to complicated cases much more readily.
 
 This terminal-glazing tangent is only to say: using a Unix system without the backtick key can feel very restrictive because you simply do not have access to some of your most useful and versatile tools.
+-->
 
 The most straightforward solution to this was to bind another keychord to the Zoom that allowed me to print these characters (maybe `Fn + t` for tilde and `Fn + b` for backtick would be sensible choices), but I had recently received a academic award and had just set up my desktop with the now four year old Zoom. It was the perfect environment for me to decide to buy another one.
 
@@ -82,8 +81,30 @@ The board arrived midday the next day.
 
 ## Use and modding
 
+Setup was fairly straightforward 
 
-arrived before my trip
+![Complete board](/images/magi75/full_board.jpg)
+
+![Keycaps removed, prior to mod](/images/magi75/keycaps_removed.jpg)
+
+![sonic with the foams](/images/magi75/foams.jpg)
+
+![Battery ribbon cable connection](/images/magi75/battery_connection.jpg)
+
+![Second cable connection](/images/magi75/second_connection.jpg)
+
+![Inside of board](/images/magi75/board_underside.jpg)
+
+![Foam strips with finger for scale](/images/magi75/foam_scale.jpg)
+
+![Example of foam insertion](/images/magi75/foam_mod_process.jpg)
+
+![Spacebar stabs after foam mod](/images/magi75/foam_mod_example.jpg)
+
+![Replacing keycaps](/images/magi75/rebuilding.jpg)
+
+![All stabs modded](/images/magi75/finished_mods.jpg)
+
 set it up, tried it, really love it
 linears are interesting
 not sure i like having no initial resistance -> keyboard navigation and gaming means my hands are always on the home row and space bar

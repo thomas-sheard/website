@@ -26,9 +26,9 @@ Most readily available keyboards nowadays are rubber-dome membrane boards, which
 The rubber has domes under each switch, which provide the switch action by returning to their moulded form after being depressed.
 There are little electrical contacts on the upper inside face of the dome which complete the circuit to send the key signal.
 These replaced mechanical keyboards as the norm because they are so much cheaper and less fiddly to produce, but they do not feel as nice to type on. This is, I think, a large reason why mechanical keyboards are still around.
-If you have a crusty old membrane board somewhere they're quite fun to take apart because they're very simple, hard to break, easy to clean, and easy to see how they work.
+If you have a crusty old membrane board somewhere they're quite fun to take apart because they're very simple, hard to break, and easy to clean and understand.
 
-The feeling of a membrane board, and therefore the feeling of keyboard most people are used to, is called *tactile* (or 'brown'), where the key slightly resists being pressed until a certain threshold of pressure is applied, at which point the key mechanism buckles and completes the circuit.
+The feeling of a membrane board, and therefore the feeling of keyboard most people are used to, is close to what we call *tactile* (or 'brown'), where the key slightly resists being pressed until a certain threshold of pressure is applied, at which point the key mechanism buckles and completes the circuit.
 If we think about the force required at some key travel distance, a tactile switch has a distinct tactile 'bump' in the plot at this buckling point, seen in the middle plot below.
 ![Switch force-travel plots](/images/zoom65/force_travel_plots.png)
 *Image courtesy of trivia.elpopular.pe, though their domain redirects to a different one whose HTTPS cert is invalid, so maybe don't pay them a visit.*
