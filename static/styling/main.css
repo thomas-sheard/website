@@ -1,15 +1,4 @@
-:root {
-  --dark:#282C34;
-  --light:#ABB2BF;
-  --light2:#C5CBD6;
-  --red:#E06C75;
-  --yellow:#E5C07B;
-  --green:#98C379;
-  --teal:#56B6C2;
-  --blue:#61AFEF;
-  --magenta:#C678DD;
-  --link:#6453A4;
-}
+@import url("theme.css");
 
 @font-face {
   font-family: my_serif;
@@ -24,12 +13,12 @@
 header {
   font-family: my_mono;
   font-weight: bold;
-  background-color: var(--dark);
+  background-color: var(--background);
   text-align: center;
 
   h1 {
     font-size: 36pt;
-    color: var(--light);
+    color: var(--foreground);
     margin: 0px;
   }
 
@@ -52,7 +41,7 @@ table {
 }
 
 table, th, td {
-    border: none; /*1px solid var(--dark) !important;*/
+    border: none; /*1px solid var(--background) !important;*/
 }
 
 th, td {
@@ -79,7 +68,7 @@ nav {
   a:hover {
     text-decoration: none;
     border-radius: 7px;
-    color: var(--dark);
+    color: var(--background);
     background-color: var(--color);
   }
 
@@ -102,16 +91,16 @@ nav {
     border: none;
     border-top-left-radius: 7px;
     border-top-right-radius: 7px;
-    background-color: var(--dark);
+    background-color: var(--background);
     color: var(--color);
   }
 
   .dropdown:hover .dropbtn {
-    color: var(--dark);
+    color: var(--background);
     background-color: var(--color);
 
     a {
-      color: var(--dark);
+      color: var(--background);
     }
   }
 
@@ -133,7 +122,7 @@ nav {
       padding-left: 11px;
       margin: 0px; /* change to nest dropdown elements inside menu */
       text-align: left;
-      color: var(--dark);
+      color: var(--background);
       font-size: 14pt;
       font-weight: 600;
     }
@@ -146,20 +135,20 @@ nav {
     margin: 0px;
 
     a:hover {
-      background-color: var(--dark);
+      background-color: var(--background);
       color: var(--color);
     }
   }
 }
 
 body {
-  background-color: var(--dark);
+  background-color: var(--background);
 }
 
 .contents {
 
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--foreground);
+  color: var(--background);
   font-family: my_serif;
 
   border-radius: 7px;
@@ -171,12 +160,12 @@ body {
 
   a {
     border-radius: 7px;
-    color: var(--link);
+    color: var(--purple);
     text-decoration: none;
   }
 
   a:hover {
-    text-decoration: underline var(--link) 2px;
+    text-decoration: underline var(--purple) 2px;
   }
 
   h1 {
@@ -224,7 +213,7 @@ body {
     font-family: my_mono;
     a {
       text-decoration: none;
-      color: var(--dark);
+      color: var(--background);
     }
   }
 
@@ -245,11 +234,11 @@ body {
 
     a {
       text-decoration: none;
-      color: var(--dark);
+      color: var(--background);
     }
 
     a:hover {
-      text-decoration: underline var(--link) 2px;
+      text-decoration: underline var(--purple) 2px;
     }
   }
 
@@ -265,9 +254,9 @@ body {
   }
 
   code {
-    /*background-color: var(--light);*/
+    /*background-color: var(--foreground);*/
     font-family: my_mono;
-    color: var(--dark);
+    color: var(--background);
     border-radius: 4px;
     font-weight: 550;
     font-size: 12pt;
@@ -276,8 +265,8 @@ body {
   pre {
     font-family: my_serif;
     font-size: 12pt;
-    color: var(--light);
-    background-color: var(--dark);
+    color: var(--foreground);
+    background-color: var(--background);
     margin: 7px;
     border-radius: 7px;
     padding: 2px 2px 3px 7px;
@@ -286,17 +275,17 @@ body {
     white-space: pre-wrap;
 
     a {
-      color: var(--light);
+      color: var(--foreground);
     }
 
     code {
-      color: var(--light);
+      color: var(--foreground);
       font-size: 12pt;
       font-family: my_mono;
       font-weight: 550;
 
       a {
-        color: var(--light);
+        color: var(--foreground);
         line-height: 1.2;
       }
 
@@ -314,8 +303,8 @@ body {
 }
 
 .entries {
-  background-color: var(--light);
-  color: var(--light);
+  background-color: var(--foreground);
+  color: var(--foreground);
   border-radius: 7px;
   font-weight: bold;
 
@@ -331,14 +320,14 @@ body {
     font-weight: bold;
 
     color: var(--color);
-    background-color: var(--dark);
+    background-color: var(--background);
     text-decoration: none;
   }
 
   a:hover {
     text-decoration: none;
     background-color: var(--color);
-    color: var(--dark);
+    color: var(--background);
   }
 
   font-family: my_monospace;
@@ -346,8 +335,8 @@ body {
 
 #toTopButton {
 
-  color: var(--light);
-  background-color: var(--dark);
+  color: var(--foreground);
+  background-color: var(--background);
   border-radius: 7px;
   border: none;
 
@@ -367,8 +356,8 @@ body {
 
 #toTopButton:hover {
   text-decoration: none;
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: var(--foreground);
+  color: var(--background);
   cursor: pointer;
 }
 
