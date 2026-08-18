@@ -16,7 +16,7 @@ target = "content/hobbies/maths/double_pendulum"
 [markup]
   [markup.highlight]
     noClasses = true
-    style = "onedark"
+    style = "nord"
   [markup.goldmark]
     [markup.goldmark.extensions]
       [markup.goldmark.extensions.passthrough]
