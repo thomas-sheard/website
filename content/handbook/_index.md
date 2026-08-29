@@ -4,7 +4,7 @@ weight: 3
 layout: top
 cascade:
     params:
-    color: "var(--red)"
+    color: "var(--magenta)"
 ---
 
 Handbook

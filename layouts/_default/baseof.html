@@ -14,9 +14,9 @@
 
     <script type="module" src="/scripts/main.js"></script>
 
-    <h1>thomas sheard.</h1>
+    <h1>thomas.sheard</h1>
     <nav id="navbar">
-      <a href="/" style="--color: var(--blue);">home</a>
+      <a href="/" style="--color: var(--orange);">home</a>
 
       {{ range .Site.Sections }}
       {{ $styleBlock := printf "style=--color:%s;" (.Params.color | default "var(--blue)") }}

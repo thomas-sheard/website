@@ -4,7 +4,7 @@ weight: 1
 layout: top
 cascade:
     params:
-        color: "var(--magenta)"
+        color: "var(--blue)"
 ---
 
 I'm interested in many things! I spend my time doing a bit of anything, and sometimes I'm inclined to share them with the world. Those things will be put here.
