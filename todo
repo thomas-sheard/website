@@ -29,6 +29,7 @@
 
 [ ] "most recent entry" on landing page
 [ ] fmt age
+[ ] link text foreground color, underlined with purple? note that purple is unused in the header!
 
 [ ] ordered list formatting is off; too small / squished. also on mobile the indent is too high
 [ ] mobile inline code uses the wrong font
