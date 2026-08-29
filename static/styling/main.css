@@ -160,12 +160,12 @@ body {
 
   a {
     border-radius: 7px;
-    color: var(--purple);
+    color: var(--link);
     text-decoration: none;
   }
 
   a:hover {
-    text-decoration: underline var(--purple) 2px;
+    text-decoration: underline var(--link) 2px;
   }
 
   h1 {
@@ -238,7 +238,7 @@ body {
     }
 
     a:hover {
-      text-decoration: underline var(--purple) 2px;
+      text-decoration: underline var(--link) 2px;
     }
   }
 
