@@ -79,13 +79,41 @@ I then received a notification at 9pm saying the parcel was out for delivery wit
 If you're in Australia and order from IQUNIX, maybe try pasting your tracking number into [YunTrack](https://www.yuntrack.com/) instead?
 The board arrived midday the next day.
 
-## Use and modding
+## The board
 
-Setup was fairly straightforward 
+Setup was straightforward enough, but did need some know-how. 
+The board needed firmware flashing, but IQUNIX provides an .exe to do this and I was able to pass the keyboard through to a Windows VM which flashed it and handed it back to Linux with no issues.
+VIA was more frustrating to set up than that, with it recognising but failing to take control of the board.
+There is an AppImage for it, but Chromium did eventually decide to work before I got to that point. I'm not sure what changed on the successful attempt.
+Once those were done it was just a matter of binding the new keysyms in my desktop profile for Sway.
 
 ![Complete board](/images/magi75/full_board.jpg)
 
+The board is great.
+It sounds amazing, and feels great to type on.
+Linears are... interesting.
+I enjoy the ease of pressing keys; I have found it is easier to sustain higher WPM with them when I am typing for a prolonged period of time.
+But I do find them a bit too light and easy to accidentally press for keyboard system navigation, or even just resting my hands on the home row while thinking.
+Gaming interestingly has not had this problem; I think there's enough conscious engagement and low enough consequences to a keypress (oh no I moved a bit to the left) that it's actually completely fine, which is nice.
+
+Completely stock out of the box, the board did have a noticeably 'pingy' backspace and rattly spacebar.
+Popping the caps off it was clear that the clip-in stabs were just loose in the case. 
+I did a slightly higher-end version of the community-favourite 'tape mod', which involves layering tape between the PCB and stabiliser feet.
+This does not stop them from being laterally loose in their cutout, but it does put enough upwards pressure on them that the additional friction from the clips holds them in place.
+Instead of tape I recycled some leftover foam sheet from the Zoom build, which is a nicer solution as it inherently places just as much pressure as is needed and also absorbs a little bit of vibration.
+
+The mod is very easy to do. It does require taking the board apart, I'd say about halfway to a full teardown.
+Unfortunately, IQUNIX is not super pro disassembly which is a bit strange and a shame for a premium board.
+They don't provide any sort of teardown guide and I couldn't find one online.
+It wasn't too hard to figure out, but I did make a point of documenting the process, especially screw locations, just in case it ends up being useful to someone.
+
+## Teardown guide & foam mod
+
+First remove all the keycaps. There is a decent cap and switch puller included with the board.
+
 ![Keycaps removed, prior to mod](/images/magi75/keycaps_removed.jpg)
+
+
 
 ![sonic with the foams](/images/magi75/foams.jpg)
 
