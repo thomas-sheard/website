@@ -249,8 +249,8 @@ body {
     font-size: 12pt;
     margin: 0px;
     line-height: 2;
+    margin-bottom: 1em; 
     /*text-align: justify;*/
-    /*margin-bottom: 1rem;*/
   }
 
   code {
