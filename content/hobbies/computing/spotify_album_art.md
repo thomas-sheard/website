@@ -1,7 +1,7 @@
 ---
 date: '2026-07-02'
 draft: true
-title: "A brief poke into Spotify's backend"
+title: "Spotify's album quality URL coding"
 ---
 
 A while ago, just after swapping to Linux (I was running EndeavourOS + Hyprland at the time) I experimented with a custom media popup for one of my then-unmapped function keys. For those unfamiliar, more barebones or customisable Linux systems do not come with fully mapped keys -- part of your configuration is binding commands or arbitrary code to each 'special' keysym (for example, the 'brightness up' key does not do anything by default). 
