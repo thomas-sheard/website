@@ -3,4 +3,4 @@ title: 'Linux'
 weight: 1
 ---
 
-This is the linux page :sunglasses:
+This is the Linux handbook page.
