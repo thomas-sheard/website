@@ -17,6 +17,5 @@ Visit my
 [LinkedIn](https://www.linkedin.com/in/thomas-sheard-3abbb92b9/)
 or 
 [GitHub](https://github.com/thomas-sheard)
-for more of me, or 
-[send me an email](mailto:thomas.sheard26@gmail.com)!
+for more of me, or send me an email at thomas.sheard26[at]gmail.com.
 
